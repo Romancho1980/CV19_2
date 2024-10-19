@@ -3,10 +3,85 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:CV19_2.ViewModels"
         xmlns:local="clr-namespace:CV19_2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="{Binding Path=Title}"
+        Height="600" Width="800">
+    <Window.DataContext>
+        <vm:MainWindowViewModel/>
+    </Window.DataContext>
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="Файл">
+                <MenuItem Header="Выход" Command="Copy" ></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Помощь">
+                <MenuItem Header="О программе"></MenuItem>
+            </MenuItem>
+        </Menu>
+        <StatusBar DockPanel.Dock="Bottom">
+            <StatusBarItem MinWidth="150" MaxWidth="350">
+                <TextBlock Text="{Binding Status}"/>
+            </StatusBarItem>
+            <StatusBarItem>
+                <ProgressBar Width="120" Height="14" Value="30"/>
+            </StatusBarItem>
+        </StatusBar>
+        <TabControl>
+            <TabItem Header="Вкладка 1">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="177*"/>
+                        <RowDefinition Height="211*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="381*"/>
+                        <ColumnDefinition Width="413*"/>
+                    </Grid.ColumnDefinitions>
+                    <Rectangle Grid.Column="0" Grid.Row="0" 
+                               Margin="5,7"
+                               Fill="Blue" Stroke="Red" 
+                               StrokeThickness="10" 
+                               RadiusX="15" RadiusY="17"/>
+                    <Ellipse Grid.Column="0" Grid.Row="1"
+                             Fill="Red" Stroke="Blue"
+                             StrokeThickness="3"/>
+                    <Grid Grid.Column="1" Grid.Row="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="33*"/>
+                            <RowDefinition Height="16*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="60*"/>
+                        </Grid.ColumnDefinitions>
+                        <GroupBox Header="Свойства" Grid.Column="1" Grid.Row="0">
+                            <StackPanel>
+                                <RadioButton Content="wqe" Margin="0 5" IsChecked="True" />
+                                <RadioButton Content="zxc" Margin="0 5"/>
+                                <RadioButton Content="wer" Margin="0 5"/>
+                                <RadioButton Content="asd" Margin="0 5"/>
+                            </StackPanel>
+                           
 
-    </Grid>
+                        </GroupBox>
+                        <StackPanel Grid.Column="1" Grid.Row="0" 
+                                    Orientation="Horizontal" 
+                                    VerticalAlignment="Bottom"
+                                    Margin="10 10">
+                            <Button Name="asd" Content="OK" 
+                                    FontSize="10" 
+                                    Width="50" Height="20" Margin="10 0"/>
+                            <Button Name="qwe" Content="Отмена" 
+                                    FontSize="10" 
+                                    Width="50" Height="20" Margin="80 0 10 0"/>
+                        </StackPanel>
+                    </Grid>
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="Вкладка 2"></TabItem>
+        </TabControl>
+    </DockPanel>
 </Window>

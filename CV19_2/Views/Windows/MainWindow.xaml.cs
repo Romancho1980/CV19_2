@@ -1,4 +1,6 @@
-﻿using System.Text;
+﻿using CV19_2.Data;
+using System.IO.Ports;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -19,6 +21,7 @@ namespace CV19_2
         public MainWindow()
         {
             InitializeComponent();
+            ComPort comPort = new ComPort();
         }
     }
 }

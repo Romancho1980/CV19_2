@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace CV19_2.ViewModel.Base
+namespace CV19_2.ViewModels.Base
 {
     internal abstract class ViewModel : INotifyPropertyChanged
     {
