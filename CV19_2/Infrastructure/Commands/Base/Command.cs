@@ -11,7 +11,10 @@ namespace CV19_2.Infrastructure.Commands.Base
     {
         public  event EventHandler? CanExecuteChanged
         {
-            add=> CommandManager.RequerySuggested += value;
+            add
+            {
+                CommandManager.RequerySuggested += value;
+            }
             remove=> CommandManager.RequerySuggested -= value;
         }
 
