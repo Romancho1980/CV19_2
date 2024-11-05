@@ -16,7 +16,7 @@ namespace CV19_2.ViewModels
         {
             CloseApplicationCommand = new LambdaCommand(OnCloseApplicationCommandExecuted, CanCloseApplicationCommandExecute);
         }
-
+        #region - Заголовок Окна
         private string _title="Анализ статистики CV19";
         /// <summary>
         /// Заголовок окна
@@ -36,8 +36,7 @@ namespace CV19_2.ViewModels
                 Set(ref _title, value); 
             }
         }
-
-
+        #endregion
 
         #region Status : string- Статус программы
         // <summary>Статус программы</summary>
