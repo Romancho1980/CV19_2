@@ -15,6 +15,19 @@ namespace CV19_2.ViewModels
     internal class MainWindowViewModel : ViewModel
     {
         public ObservableCollection<Group> Groups { get; }
+        #region Selected Group : Group - Выбранная группа
+
+        /// <summary> Выбранная группа </summary>
+        private Group _selectedGroup;
+
+        /// <summary> Выбранная группа </summary>
+        public Group SelectedGroup 
+        {
+            get => _selectedGroup; 
+            set => Set(ref _selectedGroup, value); 
+        }
+
+        #endregion
 
         public MainWindowViewModel()
         {
